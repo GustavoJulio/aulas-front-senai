@@ -48,6 +48,30 @@ function calcularMedia(){
         $situacao.style.color = 'red';
     }
 
+    
+
     $media.value = media;
 }
-$calcular.addEventListener('click',calcularMedia)
+
+function calcularConceito(){
+    const media = document.getElementById('media').value;
+    const $conceito = document.getElementById('conceito');
+    
+    if(media<3){
+        $conceito.value = "E";
+    } else if(media<5){
+            $conceito.value = "D";
+        } else if(media<8){
+                $conceito.value = "C";
+            } else if(media<10){
+                    $conceito.value = "B";
+                } else{
+                    $conceito.value = "A";
+                    }
+        }
+
+function calcular (){
+    calcularMedia();
+    calcularConceito();
+}
+$calcular.addEventListener('click',calcular)
